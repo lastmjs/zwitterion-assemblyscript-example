@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Zwitterion AssemblyScript Example</title>
+    </head>
+
+    <body>
+        <input id="num1-input" type="number" placeholder="Enter a first number"> +
+        <input id="num2-input" type="number" placeholder="Enter a second number"> =
+        <span id="result-span"></span>
+
+        <br>
+        <br>
+
+        <button>Add</button>
+
+        <script type="module">
+            import indexModuleInit from './index.as';
+
+            (async () => {
+                const indexModule = await indexModuleInit({
+                    'env.as': {
+                        log: console.log
+                    }
+                });
+
+                document.querySelector('button').addEventListener('click', add);
+
+                function add() {
+                    const num1 = document.querySelector('#num1-input').value;
+                    const num2 = document.querySelector('#num2-input').value;
+
+                    const result = indexModule.add(num1, num2);
+
+                    document.querySelector('#result-span').innerHTML = result;
+                }
+            })();
+        </script>
+    </body>
+</html>
