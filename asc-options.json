@@ -1,0 +1,5 @@
+[
+    "--optimizeLevel", "3",
+    "--runtime", "none",
+    "--shrinkLevel", "2"
+]

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "",
   "scripts": {
-    "start": "zwitterion",
+    "start": "zwitterion --asc-options-file asc-options.json",
     "build": "zwitterion --build-static --exclude node_modules"
   },
   "repository": {
